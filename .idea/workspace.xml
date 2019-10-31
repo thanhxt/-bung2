@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a2f2287c-80ae-484f-9be9-99a4d2d02f2a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/company/GameBoard.java" afterDir="false" />
+    <list default="true" id="a2f2287c-80ae-484f-9be9-99a4d2d02f2a" name="Default Changelist" comment="GameBoard created and displayed&#10;method of ongoing game created but not implemented&#10;&#10;still need to switch between player and com">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Übung2/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Übung2/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/GameBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -93,6 +92,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Hochgeladen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hochgeladen" />
+    <MESSAGE value="GameBoard created and displayed&#10;method of ongoing game created but not implemented&#10;&#10;still need to switch between player and com" />
+    <option name="LAST_COMMIT_MESSAGE" value="GameBoard created and displayed&#10;method of ongoing game created but not implemented&#10;&#10;still need to switch between player and com" />
   </component>
 </project>
