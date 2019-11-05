@@ -95,4 +95,15 @@
     <MESSAGE value="GameBoard created and displayed&#10;method of ongoing game created but not implemented&#10;&#10;still need to switch between player and com" />
     <option name="LAST_COMMIT_MESSAGE" value="GameBoard created and displayed&#10;method of ongoing game created but not implemented&#10;&#10;still need to switch between player and com" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/Main.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
 </project>

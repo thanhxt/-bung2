@@ -13,13 +13,12 @@ public class Main {
             if(counter % 2 == 0)
                 tictac.askPlayer('X');
             else
-                tictac.askPlayer('O');
+                //tictac.askPlayer('O');
+                tictac.askComputer('O');
             counter++;
             tictac.DisplayBoard();
+            tictac.status();
         }
-
-
-
     }
 
 

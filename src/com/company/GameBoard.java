@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class GameBoard {
@@ -62,6 +63,7 @@ public class GameBoard {
             return false;
     }
 
+
     /**
      * method will return true if game is on going.
      * @return
@@ -91,6 +93,32 @@ public class GameBoard {
     }
 
     /**
+     *
+     * ask computer
+     */
+
+    void askComputer(char player) {
+        int row, col;
+        Random random = new Random();
+        do {
+            row = random.nextInt(3);
+            col = random.nextInt(3);
+        }
+        while(notValidc(row,col));
+        makeMove(player, row, col);
+    }
+
+    /**
+     *
+     * this method is like the notValid method but just for the computer
+     */
+    public boolean notValidc(int row, int col){
+        if(row>3 || row<1 || col>3 || col<1 || !isEmptyc(row, col))
+            return true;
+        return false;
+    }
+
+    /**
      * this method will validate if the row and the column are between 1-3 and if the
      * position is currently empty;
      * @param row
@@ -109,6 +137,20 @@ public class GameBoard {
      * @param col
      * @return
      */
+    boolean isEmptyc(int row, int col){
+        if(gameboard[row][col] == ' ')
+            return true;
+        else{
+            return false;
+        }
+    }
+
+    /**
+     * this methos will check if a position is empty.
+     * @param row
+     * @param col
+     * @return
+     */
     boolean isEmpty(int row, int col){
         if(gameboard[row-1][col-1] == ' ')
             return true;
@@ -119,28 +161,52 @@ public class GameBoard {
     }
 
     /**
-     * NICHT FERTIG
-     * this method will check if there is a winner in between the rows or not
-     * @param row
-     * @param col
-     * @return
+     *
+     * this method will check if a row or a column is filled or not and returns false if not.
      */
-    boolean status(int row, int col){
-        for(row=0;row<3;row++){
-            for(col=0;col<3;col++){
-                if(gameboard[row-1][col-1] == 'X' || gameboard[row-1][col-1] == 'O')
-                   return true;
-                else
-                    return false;
+
+    private boolean gameStatus() {
+        int i;
+        for(i=0;i<3;i++){
+            if(gameboard[i][0] != ' ' && gameboard[i][0] == gameboard[i][1] && gameboard[i][0] == gameboard[i][2]){
+                return true;
+            }
+            else if(gameboard[0][i] != ' ' && gameboard[0][i] == gameboard[1][i] && gameboard [0][i] == gameboard[2][i]){
+                return true;
+            }
+            //diagonals
+            else if(gameboard[0][0] != ' ' && gameboard[0][0] == gameboard [1][1] && gameboard[0][0] == gameboard[2][2]){
+                return true;
+            }
+            else if(gameboard[2][0] != ' ' && gameboard[2][0] == gameboard [2][2] && gameboard[2][0] == gameboard[0][2]){
+                return true;
             }
         }
-    }
-    void gameStatus(char player){
-        if(status() = true)
-            System.out.printf( "%Player %s has won." , player );
+        return false;
     }
 
+    /**
+     *
+     * this method will stop the game if a player has won and print it out.
+     */
+    void status(){
 
+        if(gameStatus()){
+            System.out.print("won");
+            ongoinggame = false;
+        }
+    }
+
+    GameBoard status = new GameBoard();
+    void gamestatus(char player){
+        switch(status){
+            case WIN:
+                System.out.printf("Player &c has won" , player);
+                break;
+
+        }
+    }
 
 
 }
+
