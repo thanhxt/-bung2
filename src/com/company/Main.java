@@ -9,15 +9,19 @@ public class Main {
         //tictac.makeMove('O',0,1);
         tictac.DisplayBoard();
         int counter = 1;
-        while(tictac.gameActive()){
+        while(tictac.gameActive() && counter < 10){
             if(counter % 2 == 0)
-                tictac.askPlayer('X');
+                tictac.askComputer('O');
             else
                 //tictac.askPlayer('O');
-                tictac.askComputer('O');
+                tictac.askPlayer('X');
             counter++;
             tictac.DisplayBoard();
             tictac.status();
+            if (counter == 10)
+                System.out.println("STALEMATE");
+
+
         }
     }
 

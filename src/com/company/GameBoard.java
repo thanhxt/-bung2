@@ -93,19 +93,21 @@ public class GameBoard {
     }
 
     /**
+     * like askPlayer but just to create a integer between 3 and 0.
      *
      * ask computer
      */
 
     void askComputer(char player) {
-        int row, col;
+        int row, col, moverow, movecol;
+
         Random random = new Random();
         do {
-            row = random.nextInt(3);
-            col = random.nextInt(3);
+            row = random.nextInt(4);
+            col = random.nextInt(4);
         }
         while(notValidc(row,col));
-        makeMove(player, row, col);
+        makeMove(player, row-1, col-1);
     }
 
     /**
@@ -138,7 +140,7 @@ public class GameBoard {
      * @return
      */
     boolean isEmptyc(int row, int col){
-        if(gameboard[row][col] == ' ')
+        if(gameboard[row-1][col-1] == ' ')
             return true;
         else{
             return false;
@@ -162,23 +164,29 @@ public class GameBoard {
 
     /**
      *
-     * this method will check if a row or a column is filled or not and returns false if not.
+     * this method will check if a row, a column or a diagonal is filled with with an X or an O or not and returns false if it isn't.
      */
 
     private boolean gameStatus() {
         int i;
         for(i=0;i<3;i++){
+            //row
             if(gameboard[i][0] != ' ' && gameboard[i][0] == gameboard[i][1] && gameboard[i][0] == gameboard[i][2]){
+                System.out.print("Player " + gameboard[i][0] + " has won.");
                 return true;
             }
+            //column
             else if(gameboard[0][i] != ' ' && gameboard[0][i] == gameboard[1][i] && gameboard [0][i] == gameboard[2][i]){
+                System.out.print("Player " + gameboard[0][i] + " has won.");
                 return true;
             }
             //diagonals
             else if(gameboard[0][0] != ' ' && gameboard[0][0] == gameboard [1][1] && gameboard[0][0] == gameboard[2][2]){
+                System.out.print("Player " + gameboard[1][1] + " has won.");
                 return true;
             }
-            else if(gameboard[2][0] != ' ' && gameboard[2][0] == gameboard [2][2] && gameboard[2][0] == gameboard[0][2]){
+            else if(gameboard[2][0] != ' ' && gameboard[2][0] == gameboard [1][1] && gameboard[2][0] == gameboard[0][2]){
+                System.out.print("Player " + gameboard[1][1] + " has won.");
                 return true;
             }
         }
@@ -187,17 +195,15 @@ public class GameBoard {
 
     /**
      *
-     * this method will stop the game if a player has won and print it out.
+     * this method will stop the game if a player has won and stop the game.
      */
     void status(){
-
         if(gameStatus()){
-            System.out.print("won");
             ongoinggame = false;
         }
     }
 
-    GameBoard status = new GameBoard();
+  /*  GameBoard status = new GameBoard();
     void gamestatus(char player){
         switch(status){
             case WIN:
@@ -207,6 +213,8 @@ public class GameBoard {
         }
     }
 
+
+   */
 
 }
 
