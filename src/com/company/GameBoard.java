@@ -93,11 +93,10 @@ public class GameBoard {
     }
 
     /**
-     * like askPlayer but just to create a integer between 3 and 0.
+     * like askPlayer but just to create an integer between 3 and 0.
      *
-     * ask computer
+     * random INTEGER
      */
-
     void askComputer(char player) {
         int row, col, moverow, movecol;
 
@@ -111,7 +110,6 @@ public class GameBoard {
     }
 
     /**
-     *
      * this method is like the notValid method but just for the computer
      */
     public boolean notValidc(int row, int col){
@@ -163,10 +161,8 @@ public class GameBoard {
     }
 
     /**
-     *
      * this method will check if a row, a column or a diagonal is filled with with an X or an O or not and returns false if it isn't.
      */
-
     private boolean gameStatus() {
         int i;
         for(i=0;i<3;i++){
@@ -194,7 +190,6 @@ public class GameBoard {
     }
 
     /**
-     *
      * this method will stop the game if a player has won and stop the game.
      */
     void status(){
@@ -202,19 +197,5 @@ public class GameBoard {
             ongoinggame = false;
         }
     }
-
-  /*  GameBoard status = new GameBoard();
-    void gamestatus(char player){
-        switch(status){
-            case WIN:
-                System.out.printf("Player &c has won" , player);
-                break;
-
-        }
-    }
-
-
-   */
-
 }
 
